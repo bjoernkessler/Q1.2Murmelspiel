@@ -3,7 +3,7 @@
  * Beschreibung
  *
  * @version 1.0 vom 16.01.2025
- * @author 
+ * @author  Team LK
  */
 
 public class Spieler {
