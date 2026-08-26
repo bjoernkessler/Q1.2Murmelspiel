@@ -21,20 +21,19 @@ public class Spielfeld {
   public static void main(String[] argv) {
     Spielfeld Spielfeld1 = new Spielfeld();
     Loch1.setPosition();
-    System.out.println(Loch1.getPosition());
+    System.out.println("Position des Lochs: " + Loch1.getPosition()); // Ausgabe 1
     Spieler Alice = new Spieler("Alice");
     Spieler Bob = new Spieler("Bob");
     Alice.ersteMurmel = new Murmel(16);
     Alice.ersteMurmel.distanz = Math.abs(Loch1.getPosition() - Alice.ersteMurmel.position);
     alleMurmeln = Alice.ersteMurmel;
     //while (alleMurmeln.naechste != null) { 
-    System.out.println(alleMurmeln.distanz);
-    System.out.println(alleMurmeln.naechsteMurmel);
+    System.out.println("Distanz der ersten Murmel von Alice: " + alleMurmeln.distanz); // Ausgabe 2
+    System.out.println(alleMurmeln.naechsteMurmel); // Ausgabe 3
     Bob.ersteMurmel = new Murmel(8);
     Bob.ersteMurmel.distanz = Math.abs(Loch1.getPosition() - Bob.ersteMurmel.position);
-    System.out.println(Bob.ersteMurmel.distanz);
+    System.out.println("Distanz der ersten Murmel von Bob: " + Bob.ersteMurmel.distanz); // Ausgabe 4
     //} // end of while
   }
-
   // Ende Methoden
 } // end of Spielfeld
