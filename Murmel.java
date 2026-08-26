@@ -1,6 +1,6 @@
 /**
  *
- * Beschreibung
+ * Die Murmel 
  *
  * @version 1.0 vom 16.01.2025
  * @author 
