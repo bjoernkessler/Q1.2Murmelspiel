@@ -5,6 +5,8 @@
  * @version 1.0 vom 16.01.2025
  * @author 
  */
+import java.sql.SQLOutput;
+import java.util.Scanner;
 
 public class Spielfeld {
   
@@ -19,6 +21,7 @@ public class Spielfeld {
 
   // Anfang Methoden
   public static void main(String[] argv) {
+    Scanner input = new Scanner(System.in);
     Spielfeld Spielfeld1 = new Spielfeld();
     Loch1.setPosition();
     System.out.println(Loch1.getPosition());
@@ -33,6 +36,9 @@ public class Spielfeld {
     Bob.ersteMurmel = new Murmel(8);
     Bob.ersteMurmel.distanz = Math.abs(Loch1.getPosition() - Bob.ersteMurmel.position);
     System.out.println(Bob.ersteMurmel.distanz);
+    System.out.print("Wohin willst du dich bewegen? [Links] [Rechts]\n");
+    int choice = input.nextInt();
+    input.close();
     //} // end of while
   }
 
