@@ -1,0 +1,68 @@
+﻿[Files]
+File0=Loch.java
+File1=Murmel.java
+File2=Spieler.java
+File3=Spielfeld.java
+
+[Box:  - Loch]
+X=613
+Y=230
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - Murmel]
+X=200
+Y=180
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - Spieler]
+X=205
+Y=20
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - Spielfeld]
+X=628
+Y=31
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Diagram]
+comments=0
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+ShowConnections=0
+Fontname=Segoe UI
+Fontsize=12
+ShowObjectDiagram=0
+
+[Connections]
+V0=Murmel#Murmel#AssociationDirected####1#0#0###0#0
+V1=Spieler#Murmel#AssociationDirected####0#0#0###0#0
+V2=Spielfeld#Loch#AssociationDirected####0#0#0###0#0
+V3=Spielfeld#Murmel#AssociationDirected####0#0#0###0#0
+
+[Interactive]
+I0=
+
