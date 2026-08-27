@@ -5,6 +5,8 @@
  * @version 1.0 vom 16.01.2025
  * @author 
  */
+import java.sql.SQLOutput;
+import java.util.Scanner;
 
 public class Spielfeld {
   
@@ -19,6 +21,7 @@ public class Spielfeld {
 
   // Anfang Methoden
   public static void main(String[] argv) {
+    Scanner input = new Scanner(System.in);
     Spielfeld Spielfeld1 = new Spielfeld();
     Loch1.setPosition();
     
@@ -32,11 +35,7 @@ public class Spielfeld {
     System.out.println("Abstand auf der X-Achse: " + (Math.abs(Loch1.getPosition()[0] - Alice.meineMurmel.getxPos())));
     System.out.println("Abstand auf der Y-Achse: " + (Math.abs(Loch1.getPosition()[1] - Alice.meineMurmel.getyPos())));
     //while (alleMurmeln.naechste != null) { 
-    
-    Bob.murmelEinwerfen(1, 15);
-    System.out.println("Bob hat die Murmel eingeworfen!");
-    System.out.println("Abstand auf der X-Achse: " + (Math.abs(Loch1.getPosition()[0] - Bob.meineMurmel.getxPos())));
-    System.out.println("Abstand auf der Y-Achse: " + (Math.abs(Loch1.getPosition()[1] - Bob.meineMurmel.getyPos())));
+
     //} // end of while
   }
 
