@@ -34,10 +34,11 @@ public class Spielfeld {
     System.out.println("Alice hat die Murmel eingeworfen!");
     System.out.println("Abstand auf der X-Achse: " + (Math.abs(Loch1.getPosition()[0] - Alice.meineMurmel.getxPos())));
     System.out.println("Abstand auf der Y-Achse: " + (Math.abs(Loch1.getPosition()[1] - Alice.meineMurmel.getyPos())));
-    //while (alleMurmeln.naechste != null) { 
-
-    //} // end of while
+    Bob.murmelEinwerfen(24, 19);
+    System.out.println("Bob hat die Murmel eingeworfen!");
+    System.out.println("Abstand auf der X-Achse: " + (Math.abs(Loch1.getPosition()[0] - Bob.meineMurmel.getxPos())));
+    System.out.println("Abstand auf der Y-Achse: " + (Math.abs(Loch1.getPosition()[1] - Bob.meineMurmel.getyPos())));
+  
   }
-
   // Ende Methoden
 } // end of Spielfeld
