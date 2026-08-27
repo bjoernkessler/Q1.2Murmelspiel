@@ -21,18 +21,22 @@ public class Spielfeld {
   public static void main(String[] argv) {
     Spielfeld Spielfeld1 = new Spielfeld();
     Loch1.setPosition();
-    System.out.println(Loch1.getPosition());
-    Spieler Alice = new Spieler("Alice");
-    Spieler Bob = new Spieler("Bob");
-    Alice.ersteMurmel = new Murmel(16);
-    Alice.ersteMurmel.distanz = Math.abs(Loch1.getPosition() - Alice.ersteMurmel.position);
-    alleMurmeln = Alice.ersteMurmel;
+    
+    System.out.println("Die Position von Loch1 ist: " + java.util.Arrays.toString(Loch1.getPosition()));
+    Spieler Alice = new Spieler("Alice", 0.8);
+    Spieler Bob = new Spieler("Bob", 0.6);
+    Alice.setMeineMurmel(new Murmel());
+    Bob.setMeineMurmel(new Murmel());
+    Alice.murmelEinwerfen(10, 5);
+    System.out.println("Alice hat die Murmel eingeworfen!");
+    System.out.println("Abstand auf der X-Achse: " + (Math.abs(Loch1.getPosition()[0] - Alice.meineMurmel.getxPos())));
+    System.out.println("Abstand auf der Y-Achse: " + (Math.abs(Loch1.getPosition()[1] - Alice.meineMurmel.getyPos())));
     //while (alleMurmeln.naechste != null) { 
-    System.out.println(alleMurmeln.distanz);
-    System.out.println(alleMurmeln.naechsteMurmel);
-    Bob.ersteMurmel = new Murmel(8);
-    Bob.ersteMurmel.distanz = Math.abs(Loch1.getPosition() - Bob.ersteMurmel.position);
-    System.out.println(Bob.ersteMurmel.distanz);
+    
+    Bob.murmelEinwerfen(1, 15);
+    System.out.println("Bob hat die Murmel eingeworfen!");
+    System.out.println("Abstand auf der X-Achse: " + (Math.abs(Loch1.getPosition()[0] - Bob.meineMurmel.getxPos())));
+    System.out.println("Abstand auf der Y-Achse: " + (Math.abs(Loch1.getPosition()[1] - Bob.meineMurmel.getyPos())));
     //} // end of while
   }
 

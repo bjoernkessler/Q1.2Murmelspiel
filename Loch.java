@@ -9,7 +9,7 @@
 public class Loch {
   
   // Anfang Attribute
-  private static int Groesse;
+  private static int Groesse = 36;
   private static int xPosition;
   private static int yPosition;
   // Ende Attribute

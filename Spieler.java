@@ -20,7 +20,9 @@ public class Spieler {
   }
 
   // Anfang Methoden
-  public void murmelEinwerfen(int x, int y){}
+  public void murmelEinwerfen(int x, int y){
+    meineMurmel.bewegen(x, y);
+  }
   public void murmelSchieben(Murmel m, int x, int y){}
   public static String getName() {
       return Name;
