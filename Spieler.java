@@ -9,35 +9,35 @@
 public class Spieler {
   
   // Anfang Attribute
-  private static String Name;
-  private static double koennen;
+  private String name;
+  private double koennen;
   static Murmel meineMurmel;
   // Ende Attribute
   
-  public Spieler(String pName, double pKoennen) {
-    Name = pName;
-    koennen = pKoennen;
+  public Spieler(String name, double koennen) {
+    this.name = name;
+    this.koennen = koennen;
   }
 
   // Anfang Methoden
   public void murmelEinwerfen(int x, int y){
-    meineMurmel.bewegen(x, y);
+    if (meineMurmel != null){
+      int berechnetesX = (int) (x*koennen);
+      int berechnetesY = (int) (y*koennen);
+    meineMurmel.bewegen(berechnetesX, berechnetesY);
+    meineMurmel.setImSpiel(true);
+    }
   }
-  public void murmelSchieben(Murmel m, int x, int y){}
-  public static String getName() {
-      return Name;
+  public void murmelSchieben(int deltaX, int deltaY){
+    if (meineMurmel != null && meineMurmel.getImSpiel()){
+      meineMurmel.bewegen(meineMurmel.getxPos()+deltaX, meineMurmel.getyPos()+deltaY);
+    }
   }
-  public static double getKoennen() {
-    return koennen;
+  public void setMeineMurmel (Murmel meineMurmel){
+    Spieler.meineMurmel = meineMurmel;
   }
-  public static void setKoennen(double koennen) {
-      Spieler.koennen = koennen;
-  }
-  public static Murmel getMeineMurmel() {
+  public Murmel getMeineMurmel() {
       return meineMurmel;
-  }
-  public static void setMeineMurmel(Murmel meineMurmel) {
-      Spieler.meineMurmel = meineMurmel;
   }
   // Ende Methoden
 } // end of Spieler
