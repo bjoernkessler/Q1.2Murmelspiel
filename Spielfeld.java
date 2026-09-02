@@ -5,7 +5,6 @@
  * @version 1.0 vom 16.01.2025
  * @author 
  */
-import java.sql.SQLOutput;
 
 public class Spielfeld {
   
@@ -34,7 +33,7 @@ public class Spielfeld {
     // 1. Loch und Spielfeld erstellen
     Loch loch = new Loch(7, 3);
     Spielfeld feld7 = new Spielfeld(loch);
-
+  
     // 2. Murmeln erstellen
     Murmel murmeline = new Murmel(0, 0, false);
     Murmel lieblingsmurmel = new Murmel(0, 0, false);
@@ -44,6 +43,8 @@ public class Spielfeld {
     Spieler leo = new Spieler("Leo", 0.6);
 
     // 4. Spielzüge ausführen
+    
+  
     mats.murmelEinwerfen(5, 4);
     feld7.murmelPlatzieren(mats.getMeineMurmel());
 
@@ -54,6 +55,12 @@ public class Spielfeld {
     System.out.println("Mats Murmel ist im Spiel: " + murmeline.getImSpiel());
     System.out.println("Position Mats Murmel: X=" + murmeline.getXPos() + ", Y=" + murmeline.getYPos());
     System.out.println("Position Leo Murmel: X=" + lieblingsmurmel.getXPos() + ", Y=" + lieblingsmurmel.getYPos());
+
+    mats.setMeineMurmel(new Murmel(10, 10, false));
+    mats.murmelEinwerfen(24, 19);
+    System.out.println("Mats hat die Murmel eingeworfen!");
+    System.out.println("Auf der X-Achse: " + mats.meineMurmel.getXPos());
+    System.out.println("Auf der Y-Achse: " + mats.meineMurmel.getYPos());
   }
 
   
