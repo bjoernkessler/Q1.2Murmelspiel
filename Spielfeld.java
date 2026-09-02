@@ -6,39 +6,56 @@
  * @author 
  */
 import java.sql.SQLOutput;
-import java.util.Scanner;
 
 public class Spielfeld {
   
   // Anfang Attribute
-  private static Murmel Murmel;
-  private static Loch Loch1;
-  private static Murmel alleMurmeln;
+  private Loch loch;
+  private Murmel murmel1;
+  private Murmel murmel2;
   // Ende Attribute
   
-  public Spielfeld() {
+  public Spielfeld(Loch loch) {
+    this.loch = loch;
   }
 
   // Anfang Methoden
-  public static void main(String[] argv) {
-    Scanner input = new Scanner(System.in);
-    Spielfeld Spielfeld1 = new Spielfeld();
-    Loch1.setPosition();
-    
-    System.out.println("Die Position von Loch1 ist: " + java.util.Arrays.toString(Loch1.getPosition()));
-    Spieler Alice = new Spieler("Alice", 0.8);
-    Spieler Bob = new Spieler("Bob", 0.6);
-    Alice.setMeineMurmel(new Murmel());
-    Bob.setMeineMurmel(new Murmel());
-    Alice.murmelEinwerfen(10, 5);
-    System.out.println("Alice hat die Murmel eingeworfen!");
-    System.out.println("Abstand auf der X-Achse: " + (Math.abs(Loch1.getPosition()[0] - Alice.meineMurmel.getxPos())));
-    System.out.println("Abstand auf der Y-Achse: " + (Math.abs(Loch1.getPosition()[1] - Alice.meineMurmel.getyPos())));
-    Bob.murmelEinwerfen(24, 19);
-    System.out.println("Bob hat die Murmel eingeworfen!");
-    System.out.println("Abstand auf der X-Achse: " + (Math.abs(Loch1.getPosition()[0] - Bob.meineMurmel.getxPos())));
-    System.out.println("Abstand auf der Y-Achse: " + (Math.abs(Loch1.getPosition()[1] - Bob.meineMurmel.getyPos())));
-  
+  public void murmelPlatzieren(Murmel neueMurmel) {
+    if (this.murmel1 == null) {
+      this.murmel1 = neueMurmel;
+    } else if (this.murmel2 == null) {
+      this.murmel2 = neueMurmel;
+    } else {
+      System.out.println("Spielfeld ist bereits voll!");
+    }
   }
+
+  public static void main(String[] args) {
+    // 1. Loch und Spielfeld erstellen
+    Loch loch = new Loch(7, 3);
+    Spielfeld feld7 = new Spielfeld(loch);
+
+    // 2. Murmeln erstellen
+    Murmel murmeline = new Murmel(0, 0, false);
+    Murmel lieblingsmurmel = new Murmel(0, 0, false);
+
+    // 3. Spieler erstellen und Murmeln zuweisen
+    Spieler mats = new Spieler("Mats", 0.8);
+    Spieler leo = new Spieler("Leo", 0.6);
+
+    // 4. Spielzüge ausführen
+    mats.murmelEinwerfen(5, 4);
+    feld7.murmelPlatzieren(mats.getMeineMurmel());
+
+    leo.murmelEinwerfen(5, 4);
+    feld7.murmelPlatzieren(leo.getMeineMurmel());
+
+    // Auswertung
+    System.out.println("Mats Murmel ist im Spiel: " + murmeline.getImSpiel());
+    System.out.println("Position Mats Murmel: X=" + murmeline.getXPos() + ", Y=" + murmeline.getYPos());
+    System.out.println("Position Leo Murmel: X=" + lieblingsmurmel.getXPos() + ", Y=" + lieblingsmurmel.getYPos());
+  }
+
+  
   // Ende Methoden
 } // end of Spielfeld

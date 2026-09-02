@@ -13,28 +13,30 @@
 public class Loch {
   
   // Anfang Attribute
-  private static int spielFeldGroesse = 36;
-  private static int xPosition;
-  private static int yPosition;
-  private static boolean imLoch;
+  private int spielFeldGroesse = 36;
+  private int xPos;
+  private int yPos;
+  private int imLoch;
   // Ende Attribute
   
   // Anfang Methoden
-  public static void setPosition() {
-    xPosition = (int) (Math.random() * spielFeldGroesse);
-    yPosition = (int) (Math.random() * spielFeldGroesse);
-  }
-  
-  public static int[] getPosition() {
-    return new int[] {xPosition, yPosition};
+  public Loch(int xPos, int yPos) {
+    this.xPos = xPos;
+    this.yPos = yPos;
+    this.imLoch = 0;
   }
 
-  public static boolean getImLoch() {
-      return imLoch;
+  public int getxPos() {
+    return xPos;
   }
-
-  public static void setImLoch(boolean imLoch) {
-      Loch.imLoch = imLoch;
+  public int getyPos() {
+    return yPos;
+  }
+  public int getImLoch() {
+    return imLoch;
+  }
+  public void setImLoch(int imLoch) {
+    this.imLoch = imLoch;
   }
     // Ende Methoden
 } // end of Loch

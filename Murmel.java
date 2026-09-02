@@ -14,30 +14,38 @@ public class Murmel {
   boolean imSpiel;
   // Ende Attribute
   
-  public Murmel() {}
+  public Murmel(int xPos, int yPos, boolean imSpiel) {
+    this.xPos = xPos;
+    this.yPos = yPos;
+    this.imSpiel = imSpiel;
+  }
 
   // Anfang Methoden
-  public void bewegen(int x, int y) {
-    this.xPos = x;
-    this.yPos = y;
+  public void bewegen(int deltaX, int deltaY) {
+    this.xPos += deltaX;
+    this.yPos += deltaY;
   }
-  public void setxPos(int xPos) {
-      this.xPos = xPos;
+
+  public int getXPos() {
+    return xPos;
   }
-  public void setyPos(int yPos) {
-      this.yPos = yPos;
+  public void setXPos(int xPos) {
+    this.xPos = xPos;
   }
-  public int getxPos() {
-      return xPos;
+
+  public int getYPos() {
+    return yPos;
   }
-  public int getyPos() {
-      return yPos;
+  public void setYPos(int yPos) {
+    this.yPos = yPos;
   }
-  public void setImSpiel(boolean imSpiel) {
-      this.imSpiel = imSpiel;
-  }
-  public boolean getImSpiel(){
+
+  public boolean getImSpiel() {
     return imSpiel;
   }
+  public void setImSpiel(boolean imSpiel) {
+    this.imSpiel = imSpiel;
+  }
+
   // Ende Methoden
 } // end of Murmel

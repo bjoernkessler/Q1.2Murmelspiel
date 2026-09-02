@@ -30,7 +30,7 @@ public class Spieler {
   }
   public void murmelSchieben(int deltaX, int deltaY){
     if (meineMurmel != null && meineMurmel.getImSpiel()){
-      meineMurmel.bewegen(meineMurmel.getxPos()+deltaX, meineMurmel.getyPos()+deltaY);
+      meineMurmel.bewegen(meineMurmel.getXPos()+deltaX, meineMurmel.getYPos()+deltaY);
     }
   }
   public void setMeineMurmel (Murmel meineMurmel){
